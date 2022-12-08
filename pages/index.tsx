@@ -5,6 +5,10 @@ export function getServerSideProps(context: NextPageContext) {
   // context.rest.setHeader does not modify the header in
   // Vercel Preview / Production deployments.
   // This only works locally.
+  console.error(
+    "context.res",
+    context.res.getHeader("Content-Security-Policy")
+  );
   context.res.setHeader(
     "Content-Security-Policy",
     "frame-ancestors 'self' https://example.com;"
